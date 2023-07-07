@@ -8,6 +8,9 @@
 import UIKit
 
 class CellView: UICollectionViewCell {
+    
+    static let reuseId = "CellView"
+    
     lazy var createAvatarView: () -> UIImageView = {
         let avatar = UIImageView()
         avatar.layer.cornerRadius = 10

@@ -39,8 +39,10 @@ class ViewController: UIViewController {
         let itemWidth = availableWidth / 3
         
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        
+        flowLayout.minimumInteritemSpacing = minimumInteritemSpacing
         flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth + 40)
+        flowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
         
         return flowLayout
     }

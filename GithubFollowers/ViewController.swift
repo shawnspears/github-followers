@@ -9,11 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    enum Section: Int {
+        case main
+    }
+    
     var collectionView: UICollectionView!
+    var collectionDataSource: UICollectionViewDiffableDataSource<Section, GithubFollower>!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        configureDataSource()
     }
 
     
@@ -38,5 +45,15 @@ class ViewController: UIViewController {
         return flowLayout
     }
     
+    func configureDataSource() {
+        collectionDataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellView.reuseId, for: indexPath)
+            return cell
+        })
+    }
+    
+    func loadDataSource() {
+        // TODO
+    }
 }
 

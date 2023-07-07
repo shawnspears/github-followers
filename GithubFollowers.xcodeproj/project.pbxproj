@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8441F0622A5842F000796E29 /* GithubFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8441F0612A5842F000796E29 /* GithubFollower.swift */; };
 		84949A842A36544B0085108E /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84949A832A36544B0085108E /* CellView.swift */; };
 		84DCD6272A28314B00CD0353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DCD6262A28314B00CD0353 /* AppDelegate.swift */; };
 		84DCD6292A28314B00CD0353 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DCD6282A28314B00CD0353 /* SceneDelegate.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8441F0612A5842F000796E29 /* GithubFollower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubFollower.swift; sourceTree = "<group>"; };
 		84949A832A36544B0085108E /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		84DCD6232A28314B00CD0353 /* GithubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DCD6262A28314B00CD0353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8441F0602A5842C700796E29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8441F0612A5842F000796E29 /* GithubFollower.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		84DCD61A2A28314B00CD0353 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		84DCD6252A28314B00CD0353 /* GithubFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				8441F0602A5842C700796E29 /* Model */,
 				84DCD6262A28314B00CD0353 /* AppDelegate.swift */,
 				84DCD6282A28314B00CD0353 /* SceneDelegate.swift */,
 				84DCD62A2A28314B00CD0353 /* ViewController.swift */,
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84949A842A36544B0085108E /* CellView.swift in Sources */,
+				8441F0622A5842F000796E29 /* GithubFollower.swift in Sources */,
 				84DCD62B2A28314B00CD0353 /* ViewController.swift in Sources */,
 				84DCD6272A28314B00CD0353 /* AppDelegate.swift in Sources */,
 				84DCD6292A28314B00CD0353 /* SceneDelegate.swift in Sources */,

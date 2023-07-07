@@ -38,10 +38,24 @@ class CellView: UICollectionViewCell {
         
         contentView.addSubview(avatar)
         contentView.addSubview(usernameLabel)
+        
+        // Configure constraints
+        let padding: CGFloat = 10
+        NSLayoutConstraint.activate([
+            avatar.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
+            avatar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: padding),
+            avatar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            avatar.heightAnchor.constraint(equalTo: contentView.widthAnchor),
+            usernameLabel.topAnchor.constraint(equalTo: avatar.bottomAnchor, constant: padding),
+            usernameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: padding),
+            usernameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            usernameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: padding),
+            usernameLabel.heightAnchor.constraint(equalToConstant: padding)
+        ])
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

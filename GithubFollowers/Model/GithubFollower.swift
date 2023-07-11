@@ -8,5 +8,5 @@
 import Foundation
 
 struct GithubFollower: Identifiable, Hashable {
-    var id: Int
+    var id = UUID()
 }

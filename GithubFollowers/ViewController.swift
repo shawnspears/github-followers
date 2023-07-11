@@ -21,12 +21,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureCollectionView()
         configureDataSource()
+        let newView = CellView(frame: .zero)
+        newView.contentView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(newView.contentView)
+        NSLayoutConstraint.activate([
+            newView.contentView.heightAnchor.constraint(equalToConstant: 150),
+            newView.contentView.widthAnchor.constraint(equalToConstant: 150),
+            newView.contentView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            newView.contentView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
 
     
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createFlowLayout())
-        collectionView.backgroundColor = .lightGray
+        collectionView.backgroundColor = .white
         collectionView.register(CellView.self, forCellWithReuseIdentifier: CellView.reuseId)
         view.addSubview(collectionView)
     }
@@ -49,8 +58,7 @@ class ViewController: UIViewController {
     
     func configureDataSource() {
         collectionDataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellView.reuseId, for: indexPath)
-            return cell
+            return collectionView.dequeueReusableCell(withReuseIdentifier: CellView.reuseId, for: indexPath)
         })
     }
     

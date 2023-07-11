@@ -31,26 +31,28 @@ class CellView: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        contentView.backgroundColor = .lightGray
         // Create the avatar and username subviews
         let usernameLabel = createUsernameLabel(16, .bold)
         let avatar = createAvatarView()
         
-        contentView.addSubview(avatar)
-        contentView.addSubview(usernameLabel)
+        let stackView = UIStackView(arrangedSubviews: [avatar, usernameLabel])
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.alignment = .center
+        
+        contentView.addSubview(stackView)
         
         // Configure constraints
-        let padding: CGFloat = 10
         NSLayoutConstraint.activate([
-            avatar.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
-            avatar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: padding),
-            avatar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            avatar.heightAnchor.constraint(equalTo: contentView.widthAnchor),
-            usernameLabel.topAnchor.constraint(equalTo: avatar.bottomAnchor, constant: padding),
-            usernameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: padding),
-            usernameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            usernameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: padding),
-            usernameLabel.heightAnchor.constraint(equalToConstant: padding)
+            avatar.heightAnchor.constraint(equalToConstant: 75),
+            avatar.widthAnchor.constraint(equalToConstant: 75),
+            stackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
     }
